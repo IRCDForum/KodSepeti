@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+#define    BOYUT   1024
+
+
+int main(){
+
+      char ileti[BOYUT];
+      int i, uzunluk = 0;
+      
+      puts("Lutfen bir cumle giriniz..\n");
+      gets(ileti);
+      uzunluk = strlen(ileti);
+      
+	while(i++ < uzunluk){
+		
+	       printf("%d. = *\n", i);
+		
+}
