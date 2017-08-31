@@ -1,0 +1,53 @@
+#include <stdio.h> 
+
+// Kiþi profili .. 
+
+struct _kisiprofili{ 
+     
+    char nick[10]; 
+    char identd[10]; 
+    char fullname[20]; 
+     
+}; 
+struct _kisibilgi{ 
+     
+    char isim[10]; 
+    int yas; 
+    struct _kisiprofili Profil; 
+     
+}; 
+
+int main(){ 
+       
+      struct _kisibilgi KisiProfili; 
+      FILE *p; 
+       
+      if(!(p = fopen("profil.txt", "w"))){ 
+           
+          printf("Dosya acilamiyor.."); 
+           
+    }else{ 
+         
+        printf("Kullanici Ismini giriniz :\n"); 
+        scanf("%s", KisiProfili.isim); 
+         
+        printf("Kullanicinin yasini giriniz :\n"); 
+        scanf("%d", &KisiProfili.yas); 
+         
+        printf("Kullanici Adiniz   :\n"); 
+        scanf("%s", KisiProfili.Profil.nick); 
+         
+        printf("Kullanici Fullname :\n"); 
+          scanf("%s", KisiProfili.Profil.fullname); 
+         
+        printf("Kullanici Identd   :\n"); 
+        scanf("%s", KisiProfili.Profil.identd); 
+           
+        fputs("KULLANICI BILGILERI!\n", p); 
+        fprintf(p, "Kullanýcýnýn ismi ve Yasý : %s = %d\n", KisiProfili.isim, KisiProfili.yas); 
+        fprintf(p, "Kullanýcý nicki : %s\nKullanýcý Identd : %s\nKullanýcý Fullname : %s\n", KisiProfili.Profil.nick, 
+        KisiProfili.Profil.identd, KisiProfili.Profil.fullname); 
+    } 
+      fclose(p); 
+    return 0; 
+}  
